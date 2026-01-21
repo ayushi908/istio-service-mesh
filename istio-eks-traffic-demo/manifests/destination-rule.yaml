@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: reviews
+  namespace: istio-poc
+spec:
+  host: reviews
+  subsets:
+  - name: v2
+    labels:
+      version: v2
+  - name: v3
+    labels:
+      version: v3
+
+#Defines what v2 and v3 mean (label → pod mapping)

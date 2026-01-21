@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: reviews
+  namespace: istio-poc
+spec:
+  hosts:
+  - reviews
+  http:
+  - route:
+    - destination:
+        host: reviews
+        subset: v2
+      weight: 50
+    - destination:
+        host: reviews
+        subset: v3
+      weight: 50
+
+#Splits traffic 50% / 50% between v2 and v3
