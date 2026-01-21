@@ -169,3 +169,5 @@ kubectl apply -f manifests/virtualservice-100-v2.yaml
 
 kubectl apply -f manifests/virtualservice-100-v3.yaml
 
+
+
